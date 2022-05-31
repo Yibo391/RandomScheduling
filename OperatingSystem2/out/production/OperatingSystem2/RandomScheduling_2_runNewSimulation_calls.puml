@@ -1,0 +1,163 @@
+@startuml
+
+/' diagram meta data start
+config=CallConfiguration;
+{
+  "rootMethod": "RandomScheduling#runNewSimulation(boolean,int,int,int,int,int,double)",
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": ""
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false // root node is included
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showMethodParametersTypes": false,
+    "showMethodParametersNames": false,
+    "showMethodReturnType": false,
+    "showPackageLevels": 2,
+    "showCallOrder": false,
+    "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
+    "showDetailedClassStructure": false
+  },
+  "rootClass": "RandomScheduling"
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="LR"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1902341417 { 
+   	label=RandomScheduling
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_1400966414 { 
+   	label=RandomScheduling
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   RandomScheduling1902341417XXXmain1859653459[
+	label="+ main()"
+	style=filled
+	fillcolor=white
+	tooltip="RandomScheduling
+
+null"
+	fontcolor=darkgreen
+];
+
+RandomScheduling1902341417XXXreset0[
+	label="+ reset()"
+	style=filled
+	fillcolor=white
+	tooltip="RandomScheduling
+
+null"
+	fontcolor=darkgreen
+];
+
+RandomScheduling1902341417XXXrunNewSimulation1005994920[
+	label="+ runNewSimulation()"
+	style=filled
+	fillcolor=white
+	tooltip="RandomScheduling
+
+null"
+	penwidth=4
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_58066777 { 
+   	label=ScheduledProcess
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ScheduledProcess1902341417XXXincrementAllocatedCpuTime0[
+	label="+ incrementAllocatedCpuTime()"
+	style=filled
+	fillcolor=white
+	tooltip="ScheduledProcess
+
+null"
+	fontcolor=darkgreen
+];
+
+ScheduledProcess1902341417XXXincrementTotalWaitingTime0[
+	label="+ incrementTotalWaitingTime()"
+	style=filled
+	fillcolor=white
+	tooltip="ScheduledProcess
+
+null"
+	fontcolor=darkgreen
+];
+} 
+} 
+
+'edges    
+RandomScheduling1902341417XXXmain1859653459 -> RandomScheduling1902341417XXXrunNewSimulation1005994920;
+RandomScheduling1902341417XXXrunNewSimulation1005994920 -> RandomScheduling1902341417XXXreset0;
+RandomScheduling1902341417XXXrunNewSimulation1005994920 -> ScheduledProcess1902341417XXXincrementAllocatedCpuTime0;
+RandomScheduling1902341417XXXrunNewSimulation1005994920 -> ScheduledProcess1902341417XXXincrementTotalWaitingTime0;
+    
+}
+@enduml
